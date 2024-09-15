@@ -18,7 +18,7 @@ input_string = input("Enter a string: ")
 
 # Calculate length
 length = calculate_length(input_string)
-print(f"The length of the string is: {length}")
+print("The length of the string is: ",length)
 
 # Check if the string is a palindrome
 if is_palindrome(input_string):
