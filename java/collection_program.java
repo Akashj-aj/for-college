@@ -36,6 +36,5 @@ class collection_program
         {
             System.out.println(itr.next()); 
         }
-
     }
 }
