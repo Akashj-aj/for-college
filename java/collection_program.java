@@ -26,10 +26,8 @@ class collection_program
         System.out.println(a1.contains(a2)); // True
 
         System.out.println(a1.isEmpty()); // False
-        System.out.println((a1.clear())); // NULL
 
         System.out.println(a1.remove(10)); // 20 30 40 50
-        System.out.println(a1.removeAll()); //  NULL
 
         Iterator itr = a1.iterator();
         while(itr.hasNext())
