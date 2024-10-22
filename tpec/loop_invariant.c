@@ -12,7 +12,7 @@ void insertionSort(int N, int arr[]) {
     {
         value=arr[i];
         j=i-1;
-        while(j>0 && value<arr[j])
+        while(j>=0 && value<arr[j])
         {
             arr[j+1]=arr[j];
             j=j-1;
@@ -25,6 +25,7 @@ void insertionSort(int N, int arr[]) {
         printf(" ");
     }
 }
+
 
 int main(void) {
 
