@@ -1,6 +1,4 @@
-Here’s a `README.md` file template for a cricket score prediction project using machine learning:
 
----
 
 # Cricket Score Prediction Model
 
