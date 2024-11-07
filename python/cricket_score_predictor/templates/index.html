@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Score Predictor</title>
+</head>
+<body>
+    <h1>Cricket Score Predictor</h1>
+    <form method="POST" action="/predict">
+        <label for="player_name">Player Name:</label>
+        <input type="text" id="player_name" name="player_name" required><br>
+
+        <label for="current_runs">Current Runs:</label>
+        <input type="number" id="current_runs" name="current_runs" required><br>
+
+        <label for="wickets_taken">Wickets Taken:</label>
+        <input type="number" id="wickets_taken" name="wickets_taken" required><br>
+
+        <label for="team">Team:</label>
+        <input type="text" id="team" name="team" required><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction is not none %}
+    <h2>Prediction: {{ prediction }}</h2>
+    {% endif %}
+</body>
+</html>
