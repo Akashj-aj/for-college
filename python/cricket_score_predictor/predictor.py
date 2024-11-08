@@ -5,7 +5,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.ensemble import RandomForestRegressor
 
 # Load dataset
-dataset = pd.read_csv('ipl.csv')
+dataset = pd.read_csv('scores.csv')
 X = dataset.iloc[:, [7, 8, 9, 12, 13]].values  # Modify as needed based on your dataset columns
 y = dataset.iloc[:, 14].values  # Label
 
