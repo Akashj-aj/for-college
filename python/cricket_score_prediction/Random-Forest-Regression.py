@@ -1,10 +1,10 @@
 import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import StandardScaler
-from sklearn.ensemble import RandomForestRegressor
-from sklearn.metrics import r2_score
+from sklearn.model_selection import train_test_split # Splits data into a "training set" to train the model and a "test set" to check how well the model learned.
+from sklearn.preprocessing import StandardScaler # avoids domination of data
+from sklearn.ensemble import RandomForestRegressor #sklearn contains various ML algorithms
+from sklearn.metrics import r2_score #Calculates a score to measure how well the model predicts compared to actual results.
 
-# Load dataset with debug statement
+# Load dataset 
 try:
     dataset = pd.read_csv('ipl_match_data_with_wickets.csv')
     print("Dataset loaded successfully.")
@@ -16,29 +16,31 @@ except FileNotFoundError:
 dataset['remaining_overs'] = 20 - dataset['Overs Played']  # Adjust if not T20
 dataset['projected_score'] = dataset['Runs Scored'] + (dataset['remaining_overs'] * dataset['Run Rate'])
 
-# Define input features and target variable
-X = dataset[['Overs Played', 'Wickets Taken', 'Runs Scored', 'Run Rate', 'remaining_overs', 'projected_score']].values
-y = dataset['Total Score in 20 Overs'].values  # Assuming 'Total Score in 20 Overs' is the target column
+X = dataset[['Overs Played', 'Wickets Taken', 'Runs Scored', 'Run Rate', 'remaining_overs', 'projected_score']].values # features
+y = dataset['Total Score in 20 Overs'].values  # target
 
-# Debug statement for features and target extraction
+#  statement for features and target extraction
 print("Features and target extracted.")
 
 # Split data into training and test sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=0)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.25, random_state=0) # 75% -> train, 25% -> test
 
-# Feature scaling
+#  scaling
 sc = StandardScaler()
-X_train = sc.fit_transform(X_train)
-X_test = sc.transform(X_test)
+X_train = sc.fit_transform(X_train) # fit -> to claculate mean and standard deviation
+X_test = sc.transform(X_test) #applies scaling transformation without recalculating the mean and standard deviation, 
 print("Data scaled.")
 
-# Initialize and train the model with debug statement
+# Initialize and train the model 
 print("Training model...")
-model = RandomForestRegressor(n_estimators=100, max_features=None, random_state=0)
+model = RandomForestRegressor(n_estimators=100, max_features=None, random_state=0) 
+# 100 different trees with diff subset of data will be trained
+# None ==> This means that each decision tree will consider all the features available when making decisions. 
+# This ensures that the randomness in the algorithm
 model.fit(X_train, y_train)
 print("Model training completed.")
 
-# Define custom accuracy function
+#  custom accuracy function
 def custom_accuracy(y_test, y_pred, threshold):
     right = 0
     total = len(y_pred)
@@ -55,7 +57,7 @@ custom_acc = custom_accuracy(y_test, y_pred, threshold=10)
 print("R-squared value:", r2)
 print("Custom accuracy (within 10 runs):", custom_acc)
 
-# Take user input for prediction
+# Take user input
 print("\n--- Sample Prediction ---")
 try:
     overs_played = float(input("Enter Overs Played: "))
@@ -70,7 +72,7 @@ try:
         print(f"Predicted Final Score: {predicted_score}")
     else:
         # Calculate remaining overs and projected score based on input
-        remaining_overs = 20 - overs_played  # for T20 match
+        remaining_overs = 20 - overs_played  
         projected_score = runs_scored + (remaining_overs * run_rate)
 
         # Prepare input data with the new features
