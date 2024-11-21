@@ -109,7 +109,7 @@ void main()
 	root=NULL;
 	while (1)
 	{
-printf("\nEnter thechoice\n1.Insert\n2.Preorder\n3.Inorder\n4.Postorder\n5.Search an Element\n6:Exit\n");
+		printf("\nEnter thechoice\n1.Insert\n2.Preorder\n3.Inorder\n4.Postorder\n5.Search an Element\n6:Exit\n");
 		scanf("%d",&ch);
 		switch(ch)
 		{
@@ -123,13 +123,14 @@ printf("\nEnter thechoice\n1.Insert\n2.Preorder\n3.Inorder\n4.Postorder\n5.Searc
 				root=insert(item,root);
 				}
 				break;
-			case 2: if(root==NULL)
+			case 2: 
+				if(root==NULL)
 				{
 					printf("Tree is empty\n");
 					break;
 				}
-			           printf("Preorder traversal is \n"); 
-                                       preorder(root);
+			    printf("Preorder traversal is \n"); 
+                preorder(root);
 				printf("\n");
 				break;
 			case 3: if(root==NULL)
