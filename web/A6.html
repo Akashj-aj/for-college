@@ -1,0 +1,31 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Prime number</title>
+    </head>
+    <body>
+        <script>
+            let number=prompt("enter the number")
+            let flag=true;
+            if(number==1){
+                documnet.write("1 is neither prime nor composite");
+            }
+            else if(number>1){
+                for(let i=2;i<number;i++){
+                    if(number%i==0){
+                        flag=false;
+                        break;
+                    }
+                }
+            }
+            if(flag==true){
+                document.write(number+" is a prime number");
+            }
+            if(flag==false){
+                document.write(number+" is not a prime number");
+            }
+            
+        </script>
+    </body>
+</html>

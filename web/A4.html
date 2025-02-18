@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Enrollment Form</title>
+</head>
+<body>
+    <h2>Course Enrollment Form</h2><br>
+    <form action = "/action_page.php">
+        Name: <input type="text" id="name" name="name" ><br><br>
+        
+        USN: <input type="text" id="usn" name="usn" ><br><br>
+        
+        Gender:
+        <select id="gender" name="gender" >
+            <option value="">Select</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select><br><br>
+        
+        Subject Interested:<br>
+        <select id="subject" name="subject" >
+            <option value="">Select</option>
+            <option value="Mathematics">Mathematics</option>
+            <option value="Physics">Physics</option>
+            <option value="Chemistry">Chemistry</option>
+            <option value="Computer Science">Computer Science</option>
+        </select><br><br>
+        
+        Email: <input type="email" id="email" name="email" ><br><br>
+        
+        Contact Number: <input type="tel" id="contact" name="contact" ><br><br>
+        
+        Address:
+        <textarea id="address" name="address" rows="3" ></textarea><br><br>
+        
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>
