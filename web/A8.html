@@ -1,0 +1,44 @@
+<html lang = 'en'>
+
+<head>
+
+    <meta charset = 'UTF - 8' >
+    <meta name = "viewport" content = "width = device - width, initial - scale = 1.0" >
+
+    <title> Largest Number </title>
+
+</head>
+
+<body>
+
+<script>
+
+    const num1 = parseFloat ( prompt ("enter first number : " ));
+
+    const num2 = parseFloat ( prompt ("enter second number : " ));
+
+    const num3 = parseFloat ( prompt ("enter third number : " ));
+
+    let largest ;
+
+    if ( num1 >= num2 && num1 > num3 ){
+
+        largest = num1 ;
+
+    } else if (num2 >= num1 && num2 >= num3 ){
+
+        largest = num2 ;
+
+    } else {
+
+        largest = num3 ;
+
+    }
+
+    document.write ("the largest number is" + largest);
+
+</script>
+
+</body>
+
+</html>
