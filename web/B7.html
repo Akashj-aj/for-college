@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multilevel Inheritance</title>
+</head>
+<body>
+    <script>
+        // Parent class: Box
+        class Box {
+            constructor(length, breadth, height) {
+                this.length = length;
+                this.breadth = breadth;
+                this.height = height;
+            }
+        }
+
+        // Child class: BoxWeight (extends Box)
+        class BoxWeight extends Box {
+            constructor(length, breadth, height, weight) {
+                super(length, breadth, height); // Call parent constructor
+                this.weight = weight;
+            }
+        }
+
+        // Child class: BoxCost (extends BoxWeight)
+        class BoxCost extends BoxWeight {
+            constructor(length, breadth, height, weight, shipmentCost) {
+                super(length, breadth, height, weight); // Call parent constructor
+                this.shipmentCost = shipmentCost;
+            }
+        }
+        
+        const boxcost = new BoxCost(10, 8, 5, 3.5, 20);
+        document.write("Box Dimension: length = ", boxcost.length, "Breadth = ", boxcost.breadth, "height = ", boxcost.height);
+        document.write("<br><br> Shipment Cost: ", boxcost.shipmentCost);
+    </script>
+</body>
+</html>
+</html>

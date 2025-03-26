@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback & Async Example</title>
+</head>
+<body>
+    <script>
+        // Callback function example
+        function greet(name, callback) {
+            callback("Hello, " + name);
+        }
+
+        greet("Alice", (message) => document.write("<p>" + message + "</p>"));
+
+        // Async function example
+        async function fetchData() {
+            document.write("<p>Fetching data...</p>");
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            document.write("<p>Data loaded!</p>");
+        }
+
+        fetchData();
+    </script>
+</body>
+</html>

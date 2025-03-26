@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rectangle Perimeter</title>
+</head>
+<body>
+    <script>
+        const perimeterRest = (...args) => 2 * (args[0] + args[1]);
+
+        const perimeterSpread = (length, breadth) => 2 * (length + breadth);
+
+        let dimensions = [5, 10];
+
+        alert("Perimeter using rest operator: " + perimeterRest(...dimensions));
+        alert("Perimeter using spread operator: " + perimeterSpread(...dimensions));
+    </script>
+</body>
+</html>

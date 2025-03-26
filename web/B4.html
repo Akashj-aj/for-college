@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leap Year Checker</title>
+</head>
+<body>
+    <script>
+        // Arrow function to check leap year
+        const isLeapYear = (year) => {
+            let result = (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+            alert(year + " is " + (result ? "a Leap Year" : "not a Leap Year"));
+        };
+
+        // Get user input
+        let userYear = parseInt(prompt("Enter a year to check if it's a leap year:"));
+        
+        // Call function without validation
+        isLeapYear(userYear);
+    </script>
+</body>
+</html>

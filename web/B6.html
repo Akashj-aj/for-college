@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optional & Default Parameters</title>
+</head>
+<body>
+    <script>
+        const greet = (name = "Guest", message) => {
+            alert(`Hello, ${name}! ${message || "Welcome to our site."}`);
+        };
+
+        greet(); 
+        greet("Alice"); 
+        greet("Bob", "Hope you have a great day!"); 
+    </script>
+</body>
+</html>
